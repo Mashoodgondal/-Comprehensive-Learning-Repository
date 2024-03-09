@@ -26,13 +26,13 @@ const Counting = () => {
           Add
         </button>
         <button
-          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={decrement}
         >
           Sub
         </button>
         <button
-          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+          class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
           onClick={remove}
         >
           Clear
