@@ -1,20 +1,26 @@
-"use client";
-import { useState } from "react";
-const Page = () => {
-  //   const [score, setscore] = useState('');
-  const [grade, setgrsde] = useState("");
-  const score = 80;
+const State = () => {
+  let score = 89;
+  let grade = "";
   if (score >= 90) {
-    setgrsde("A");
+    grade = "A";
   } else if (score >= 80) {
-    setgrsde("B");
+    grade = "B";
+  } else if (score >= 70) {
+    grade = "C";
+  } else if (score >= 60) {
+    grade = "D";
+  } else {
+    grade = "F";
   }
   return (
-    <div>
-      <h1>Check Grades</h1>
-      <h1>your grade is {grade}</h1>
+    <div className="m-5 text-center ">
+      {score >= 60 ? (
+        <h2>you are passed and grade is: {grade}</h2>
+      ) : (
+        <h2>you are failed and grade is: {grade}</h2>
+      )}
     </div>
   );
 };
 
-export default Page;
+export default State;
