@@ -7,10 +7,13 @@ const Counting = () => {
     Setcount(count + 1);
   };
   const decrement = () => {
-    Setcount(count - 1);
+    if (count >= 1) {
+      Setcount(count - 1);
+    }
   };
+
   const remove = () => {
-    Setcount(count * 0);
+    Setcount(0);
   };
   return (
     <div>
@@ -31,12 +34,14 @@ const Counting = () => {
         >
           Sub
         </button>
-        <button
-          class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-          onClick={remove}
-        >
-          Clear
-        </button>
+        {count > 0 && (
+          <button
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            onClick={remove}
+          >
+            Clear
+          </button>
+        )}
       </div>
     </div>
   );

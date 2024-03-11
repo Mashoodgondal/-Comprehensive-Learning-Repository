@@ -1,5 +1,5 @@
 const State = () => {
-  let score = 89;
+  let score = 70;
   let grade = "";
   if (score >= 90) {
     grade = "A";
@@ -14,11 +14,9 @@ const State = () => {
   }
   return (
     <div className="m-5 text-center ">
-      {score >= 60 ? (
-        <h2>you are passed and grade is: {grade}</h2>
-      ) : (
-        <h2>you are failed and grade is: {grade}</h2>
-      )}
+      {score >= 60 && <h2>you are passed and grade is: {grade}</h2>}
+
+      {score < 60 && <h2>you are failed and grade is: {grade}</h2>}
     </div>
   );
 };
