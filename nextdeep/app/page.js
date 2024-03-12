@@ -1,4 +1,5 @@
 import State from "./ifState/page";
+import MapFunc from "./mapFunc/page";
 import Counting from "./simpleCounter/page";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <h1>Hellow-World</h1>
       <Counting />
       <State />
+      <MapFunc />
     </>
   );
 }
