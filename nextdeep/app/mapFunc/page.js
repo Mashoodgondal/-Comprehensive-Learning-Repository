@@ -11,7 +11,7 @@ const MapFunc = () => {
   };
   return (
     <div>
-      {/* {arr.map((item) => {
+      {arr.map((item) => {
         return (
           <>
             <h1 className="text-center"> Hellow - {item.Name}</h1>
@@ -20,7 +20,7 @@ const MapFunc = () => {
             <hr />
           </>
         );
-      })} */}
+      })}
       <table>
         <tr>
           <th>StudentName</th>
@@ -35,7 +35,7 @@ const MapFunc = () => {
               <td>{item.Section}</td>
               <td>
                 <button
-                  className="bg-gray-300 rounded-md"
+                  className="bg-gray-300 rounded-md hover:bg-gray-400"
                   onClick={deleteHandler}
                 >
                   Delete
