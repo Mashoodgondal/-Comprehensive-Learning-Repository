@@ -11,7 +11,7 @@ const MapFunc = () => {
   };
   return (
     <div>
-      {arr.map((item) => {
+      {/* {arr.map((item) => {
         return (
           <>
             <h1 className="text-center"> Hellow - {item.Name}</h1>
@@ -20,7 +20,7 @@ const MapFunc = () => {
             <hr />
           </>
         );
-      })}
+      })} */}
       <table>
         <tr>
           <th>StudentName</th>
@@ -45,6 +45,14 @@ const MapFunc = () => {
           );
         })}
       </table>
+      {arr.map((item) => {
+        return (
+          <>
+            <h1 className="text-center">{item.Section}</h1>
+            <hr className="w-10 h-1 mx-auto bg-red-600 border-0 rounded md:my-10 dark:bg-gray-700" />
+          </>
+        );
+      })}
     </div>
   );
 };
