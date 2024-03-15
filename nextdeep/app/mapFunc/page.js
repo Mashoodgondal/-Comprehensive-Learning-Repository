@@ -54,6 +54,7 @@ const MapFunc = () => {
             <hr className=" rounded md:my-10 dark:bg-gray-700" />
             <h1 className="text-center">{item.Section}</h1>
             <hr className="w-10 h-1 mx-auto bg-red-600 border-0 dark:bg-gray-700" />
+            <h2>{item.Name}</h2>
           </>
         );
       })}
