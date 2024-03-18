@@ -42,6 +42,12 @@ const Counting = () => {
             Clear
           </button>
         )}
+        <button
+          className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${className}`}
+          onClick={onClick}
+        >
+          Botton
+        </button>
       </div>
     </div>
   );
