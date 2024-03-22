@@ -59,6 +59,14 @@ const Counting = () => {
             <h2>Practice of the 2nd day</h2>
           </div>
         </div>
+        <div className="mt-4 mb-8 grid grid-cols-1 border border-gray-200 space-y-4 md:grid-cols-2">
+          <div className="mt-4">
+            <h1> 3rd </h1>
+          </div>
+          <div>
+            <h2>Practice of the 3rd day</h2>
+          </div>
+        </div>
       </div>
     </div>
   );
