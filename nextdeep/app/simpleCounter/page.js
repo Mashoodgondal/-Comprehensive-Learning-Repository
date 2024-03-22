@@ -47,6 +47,12 @@ const Counting = () => {
           <div className="mt-4">
             <h1>Only for practice </h1>
           </div>
+          <div className="mt-4">
+            <h1>Only for practice </h1>
+          </div>
+          <div className="mt-4">
+            <h1>Only for practice </h1>
+          </div>
           <div>
             <h2>Deep study</h2>
           </div>
@@ -64,6 +70,8 @@ const Counting = () => {
             <h1> 3rd </h1>
           </div>
           <div>
+            <h2>Practice of the 3rd day</h2>
+            <h2>Practice of the 3rd day</h2>
             <h2>Practice of the 3rd day</h2>
           </div>
         </div>
