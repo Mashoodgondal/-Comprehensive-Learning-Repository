@@ -12,8 +12,13 @@ const State = () => {
   } else {
     grade = "F";
   }
+  const add = () => {
+    console.log(2 + 3);
+  };
+
   return (
     <div className="m-5 text-center ">
+      <button onClick={add}>add</button>
       {score >= 60 && <h2>you are passed and grade is: {grade}</h2>}
 
       {score < 60 && <h2>you are failed and grade is: {grade}</h2>}
