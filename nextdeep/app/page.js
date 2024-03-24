@@ -2,6 +2,7 @@
 import ApiCalling from "./callApi/page";
 import MapFunc from "./mapFunc/page";
 import Counting from "./simpleCounter/page";
+import Getvalue from "./targetValue/page";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         </div>
       </div>
       <ApiCalling />
+      <Getvalue />
     </>
   );
 }
