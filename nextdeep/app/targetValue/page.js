@@ -5,6 +5,7 @@ const Getvalue = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [phone, setphone] = useState("");
+  const [password, setpassword] = useState("");
   // const changehandler = (e) => {
   //   setname(e.target.value);
   // };
@@ -30,6 +31,12 @@ const Getvalue = () => {
             placeholder="Enter phone number"
             onChange={(e) => setphone(e.target.value)}
           ></input>
+          <input
+            className="border border-gray-600 rounded focuc:outline-blue-400"
+            type="password"
+            placeholder="Enter  password"
+            onChange={(e) => setpassword(e.target.value)}
+          ></input>
         </div>
         <div>
           <h2 className="mt-2mt-2 font-bolt text-gray-800">
@@ -37,6 +44,9 @@ const Getvalue = () => {
           </h2>
           <h2 className=" font-bolt text-gray-800">Enter Email:{email}</h2>
           <h2 className="mt-2 font-bolt text-gray-800">Enetr Phone:{phone}</h2>
+          <h2 className="mt-2 font-bolt text-gray-800">
+            Enetr password:{password}
+          </h2>
         </div>
       </div>
     </div>
