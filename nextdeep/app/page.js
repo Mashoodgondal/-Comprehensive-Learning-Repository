@@ -1,5 +1,6 @@
 // import State from "./ifState/page";
 import ApiCalling from "./callApi/page";
+import GitApp from "./gitapp/page";
 import MapFunc from "./mapFunc/page";
 import Counting from "./simpleCounter/page";
 import Getvalue from "./targetValue/page";
@@ -19,6 +20,7 @@ export default function Home() {
       </div>
       <ApiCalling />
       <Getvalue />
+      <GitApp />
     </>
   );
 }

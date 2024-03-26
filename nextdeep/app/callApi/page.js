@@ -41,6 +41,7 @@ const ApiCalling = () => {
           Load Data
         </button>
       </div>
+      <hr class="w-full h-0.5 mx-auto my-4 bg-gray-600 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
     </div>
   );
 };
