@@ -12,7 +12,7 @@ const Getvalue = () => {
   return (
     <div>
       <div className="m-4 text-center ">
-        <div className="m-4 flex flex-wrap space-x-4">
+        <div className="m-4 flex flex-wrap item-center justify-center  space-x-4">
           <input
             className="border border-gray-600   rounded focuc:outline-blue-400"
             type="text"
