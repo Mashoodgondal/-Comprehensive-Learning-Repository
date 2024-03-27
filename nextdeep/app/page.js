@@ -1,5 +1,6 @@
 // import State from "./ifState/page";
 import ApiCalling from "./callApi/page";
+import FechApi from "./fechApi/page";
 import GitApp from "./gitapp/page";
 import MapFunc from "./mapFunc/page";
 import Counting from "./simpleCounter/page";
@@ -21,6 +22,7 @@ export default function Home() {
       <ApiCalling />
       <Getvalue />
       <GitApp />
+      <FechApi />
     </>
   );
 }
