@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FechApi = () => {
   const [products, setproducts] = useState([]);
@@ -8,18 +8,19 @@ const FechApi = () => {
     products = await products.json();
     setproducts(products);
     console.log(products);
+    useEffect(products, []);
   };
   return (
     <div className="m-6 p-4 text-center">
       <h1 className="text-3xl text-indigo-600 text-center font-bold">
         Fech Data From API
       </h1>
-      <button
+      {/* <button
         onClick={fetchitems}
         className="bg-gray-400 p-1 rounded-md hover:bg-gray-300 m-4"
       >
         fetch items
-      </button>
+      </button> */}
       {products && (
         <table className="border-collapse border border-gray-400">
           <thead>

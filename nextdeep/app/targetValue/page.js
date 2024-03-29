@@ -11,7 +11,7 @@ const Getvalue = () => {
   // };
   return (
     <div>
-      <h1>Target values Fiom inputs </h1>
+      <h1>Target values From inputs </h1>
       <div className="m-4 text-center ">
         <div className="m-4 flex flex-wrap item-center justify-center  space-x-4">
           <input
