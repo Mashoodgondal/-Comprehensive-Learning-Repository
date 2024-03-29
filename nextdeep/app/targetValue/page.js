@@ -34,6 +34,12 @@ const Getvalue = () => {
           ></input>
           <input
             className="border border-gray-600 rounded focuc:outline-blue-400"
+            type="number"
+            placeholder="Enter phone number"
+            onChange={(e) => setphone(e.target.value)}
+          ></input>
+          <input
+            className="border border-gray-600 rounded focuc:outline-blue-400"
             type="password"
             placeholder="Enter  password"
             onChange={(e) => setpassword(e.target.value)}
