@@ -32,12 +32,7 @@ const Getvalue = () => {
             placeholder="Enter phone number"
             onChange={(e) => setphone(e.target.value)}
           ></input>
-          <input
-            className="border border-gray-600 rounded focuc:outline-blue-400"
-            type="number"
-            placeholder="Enter phone number"
-            onChange={(e) => setphone(e.target.value)}
-          ></input>
+
           <input
             className="border border-gray-600 rounded focuc:outline-blue-400"
             type="password"
@@ -51,7 +46,7 @@ const Getvalue = () => {
           </h2>
           <h2 className=" font-bolt text-gray-800">Enter Email:{email}</h2>
           <h2 className="mt-2 font-bolt text-gray-800">Enetr Phone:{phone}</h2>
-          <h2 className="mt-2 font-bolt text-gray-800">Enetr Phone:{phone}</h2>
+
           <h2 className="mt-2 font-bolt text-gray-800">
             Enetr password:{password}
           </h2>

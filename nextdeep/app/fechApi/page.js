@@ -8,8 +8,10 @@ const FechApi = () => {
     products = await products.json();
     setproducts(products);
     console.log(products);
-    useEffect(products, []);
   };
+  useEffect(() => {
+    fetchitems();
+  }, []);
   return (
     <div className="m-6 p-4 text-center">
       <h1 className="text-3xl text-indigo-600 text-center font-bold">
