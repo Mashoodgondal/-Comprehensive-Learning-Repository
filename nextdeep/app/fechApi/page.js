@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 
 const FechApi = () => {
   const [products, setproducts] = useState([]);
+  const [loader, setloader] = useState(true);
   const fetchitems = async () => {
     let products = await fetch("https://fakestoreapi.com/products");
     products = await products.json();
     setproducts(products);
     console.log(products);
+    setloader(false);
   };
   useEffect(() => {
     fetchitems();
@@ -23,37 +25,47 @@ const FechApi = () => {
       >
         fetch items
       </button> */}
-      {products && (
-        <table className="border-collapse border border-gray-400">
-          <thead>
-            <tr>
-              <th className="border border-gray-400 p-2">id</th>
-              <th className="border border-gray-400 p-2">img</th>
-              <th className="border border-gray-400 p-2">title</th>
-              <th className="border border-gray-400 p-2">price</th>
-              <th className="border border-gray-400 p-2">category</th>
-              <th className="border border-gray-400 p-2">description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td className="border border-gray-400 p-2">{product.id}</td>
-                <td className="border border-gray-400 p-2">
-                  <img src={product.image} width={40} alt="" />
-                </td>
-                <td className="border border-gray-400 p-2">{product.title}</td>
-                <td className="border border-gray-400 p-2">{product.price}</td>
-                <td className="border border-gray-400 p-2">
-                  {product.category}
-                </td>
-                <td className="border border-gray-400 p-2">
-                  {product.description.slice(0, 20)}
-                </td>
+      {products ? (
+        <div>
+          <table className="border-collapse border border-gray-400">
+            <thead>
+              <tr>
+                <th className="border border-gray-400 p-2">id</th>
+                <th className="border border-gray-400 p-2">img</th>
+                <th className="border border-gray-400 p-2">title</th>
+                <th className="border border-gray-400 p-2">price</th>
+                <th className="border border-gray-400 p-2">category</th>
+                <th className="border border-gray-400 p-2">description</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product.id}>
+                  <td className="border border-gray-400 p-2">{product.id}</td>
+                  <td className="border border-gray-400 p-2">
+                    <img src={product.image} width={40} alt="" />
+                  </td>
+                  <td className="border border-gray-400 p-2">
+                    {product.title}
+                  </td>
+                  <td className="border border-gray-400 p-2">
+                    {product.price}
+                  </td>
+                  <td className="border border-gray-400 p-2">
+                    {product.category}
+                  </td>
+                  <td className="border border-gray-400 p-2">
+                    {product.description.slice(0, 20)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : loader ? (
+        <div>loading...</div>
+      ) : (
+        <div> No Data Found</div>
       )}
     </div>
   );
