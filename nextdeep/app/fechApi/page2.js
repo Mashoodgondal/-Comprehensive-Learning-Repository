@@ -1,10 +1,11 @@
-const FechApi = () => {
-  const fetchitems = async () => {
-    let products = await fetch("https://fakestoreapi.com/products");
-    products = await products.json();
-
-    console.log(products);
-  };
+const fetchitems = async () => {
+  let products = await fetch("https://fakestoreapi.com/products");
+  products = await products.json();
+  return products;
+  // console.log(products);
+};
+const FechApi = async () => {
+  const products = await fetchitems();
 
   return (
     <div className="m-6 p-4 text-center">
