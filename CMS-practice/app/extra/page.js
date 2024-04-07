@@ -12,6 +12,15 @@ const page = () => {
       <p>practicing contentfull api</p>
       <h1> only practice </h1>
       <p>practicing contentfull api</p>
+      page2:
+      <h1> only practice </h1>
+      <p>practicing contentfull api</p>
+      <h1> only practice </h1>
+      <p>practicing contentfull api</p>
+      <h1> only practice </h1>
+      <p>practicing contentfull api</p>
+      <h1> only practice </h1>
+      <p>practicing contentfull api</p>
     </div>
   );
 };
