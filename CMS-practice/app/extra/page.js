@@ -1,45 +1,7 @@
 import React from "react";
 
 const page = () => {
-  return (
-    <div>
-      page
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      page2:
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      page3:
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-      <h1> only practice </h1>
-      <p>practicing contentfull api</p>
-    </div>
-  );
+  return <div>page</div>;
 };
 
 export default page;

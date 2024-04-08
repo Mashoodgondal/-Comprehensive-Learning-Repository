@@ -1,10 +1,12 @@
-import client from "../lib/client";
-const fechServices = async () => {
+import client from "../lib/contentfulClient";
+
+const fetchServices = async () => {
   let responce = await client.getEntries({ content_type: "services" });
+  console.log(responce);
 };
 
 const CmsPractice = async () => {
-  const services = await fechServices();
+  const services = await fetchServices();
   return <div></div>;
 };
 
