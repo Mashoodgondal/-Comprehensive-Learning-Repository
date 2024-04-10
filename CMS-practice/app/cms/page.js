@@ -28,7 +28,7 @@ const CmsPractice = async () => {
           <div className="text-center m-4 p-4 space-y-4 ">
             <h1 key={i}>{service.title}</h1>
             <h2>{service.description}</h2>
-            <img src={service.image} alt="" width={100} />
+            <img src={service.image} alt="" width={100} className="mx-auto" />
             <hr className="h-2 " />
           </div>
         );
