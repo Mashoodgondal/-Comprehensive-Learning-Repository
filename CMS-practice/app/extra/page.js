@@ -6,6 +6,12 @@ const page = () => {
       page
       <h1>Eid Special</h1>
       <p>working on contentful </p>
+      page
+      <h1>Eid Special</h1>
+      <p>working on contentful </p>
+      page
+      <h1>Eid Special</h1>
+      <p>working on contentful </p>
     </div>
   );
 };
