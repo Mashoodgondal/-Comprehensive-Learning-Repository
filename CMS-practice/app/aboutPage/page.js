@@ -24,6 +24,12 @@ const About = async () => {
       <h1>Hellow World</h1>
       <h1>Hellow World</h1>
       <h1>2nd entries</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>2nd entries</h1>
       {About.map((item) => {
         return (
           <div>
