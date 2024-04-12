@@ -19,6 +19,10 @@ const About = async () => {
   return (
     <div className="text-center">
       <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
+      <h1>Hellow World</h1>
       <h1>2nd entries</h1>
       {About.map((item) => {
         return (
