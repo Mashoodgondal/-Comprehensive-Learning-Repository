@@ -2,35 +2,26 @@ import client from "../lib/contentfulClient";
 
 const fetchAboutData = async () => {
   let responce = await client.getEntry({ content_type: "About" });
-  // console.log(responce);
-  const About = responce.items.map((item) => {
-    return {
-      name: item.fields.name,
-      address: item.fields.address,
-      description: item.fields.description,
-    };
-  });
-  return About;
+  console.log(responce.fields[0].name);
+  // const About = responce.items.map((item) => {
+  //   return {
+  //     name: item.fields.name,
+  //     address: item.fields.address,
+  //     description: item.fields.description,
+  //   };
+  // });
+  // return About;
 };
 
 const About = async () => {
   const About = await fetchAboutData();
-  console.log(About);
+  // console.log(About);
   return (
     <div className="text-center">
       <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
+
       <h1>2nd entries</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>Hellow World</h1>
-      <h1>2nd entries</h1>
-      {About.map((item) => {
+      {/* {About.map((item) => {
         return (
           <div>
             (<h1>{item.Name}</h1>), (<h2>{item.Address}</h2>), (
@@ -38,7 +29,7 @@ const About = async () => {
           </div>
         );
         <hr />;
-      })}
+      })} */}
     </div>
   );
 };
