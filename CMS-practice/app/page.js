@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CmsPractice from "./cms/page";
+// import CmsPractice from "./cms/page";
 import About from "./aboutPage/page";
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     <>
       {" "}
       {/* <h1>hellow world</h1> */}
-      <CmsPractice />
+      {/* <CmsPractice /> */}
       <About />
     </>
   );

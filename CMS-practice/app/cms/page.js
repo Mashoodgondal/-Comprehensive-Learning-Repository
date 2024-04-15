@@ -29,7 +29,7 @@ const CmsPractice = async () => {
       <h1 className="text-3xl text-center text-indigo-500 font-bold ">
         Get Data from Contentful CMS{" "}
       </h1>
-      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+      {/* <h1 className="text-3xl text-center text-indigo-500 font-bold ">
         Get Data from Contentful CMS{" "}
       </h1>
       <h1 className="text-3xl text-center text-indigo-500 font-bold ">
@@ -37,7 +37,7 @@ const CmsPractice = async () => {
       </h1>
       <h1 className="text-3xl text-center text-indigo-500 font-bold ">
         Get Data from Contentful CMS{" "}
-      </h1>
+      </h1> */}
       {services.map((service, i) => {
         return (
           <div className="text-center m-4 p-4 space-y-4 ">
@@ -53,3 +53,15 @@ const CmsPractice = async () => {
 };
 
 export default CmsPractice;
+
+{
+  /* <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+      </h1>
+      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+      </h1>
+      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+      </h1> */
+}
