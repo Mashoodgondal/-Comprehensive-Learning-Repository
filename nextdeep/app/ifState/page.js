@@ -20,6 +20,11 @@ const State = () => {
       ) : (
         <div>you are failed </div>
       )}
+      {score >= 60 ? (
+        <h2>you are passed and grade is: {grade}</h2>
+      ) : (
+        <div>you are failed </div>
+      )}
 
       {/* {score < 60 && <h2>you are failed and grade is: {grade}</h2>} */}
     </div>
