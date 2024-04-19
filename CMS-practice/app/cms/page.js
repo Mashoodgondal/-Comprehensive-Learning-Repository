@@ -114,3 +114,21 @@ export default CmsPractice;
         Get Data from Contentful CMS{" "}
      </h1>*/
 }
+/* <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+      </h1>
+      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+      </h1>
+      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+      </h1> 
+       <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+         Get Data from Contentful CMS{" "}
+       </h1>
+      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+         Get Data from Contentful CMS{" "}
+       </h1>
+       <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+        Get Data from Contentful CMS{" "}
+     </h1>*/
