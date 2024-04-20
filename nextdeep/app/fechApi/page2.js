@@ -14,7 +14,7 @@ const FechApi = async () => {
       </h1>
       {/* <button
         onClick={fetchitems}
-        className="bg-gray-400 p-2 rounded-lgs hover:bg-gray-300 m-4"
+        className="bg-gray-300 p-2 rounded-lg hover:bg-gray-250 m-4"
       >
         fetch items
       </button> */}
