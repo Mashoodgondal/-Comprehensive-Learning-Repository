@@ -1,6 +1,7 @@
 import Image from "next/image";
 // import CmsPractice from "./cms/page";
-import About from "./aboutPage/page";
+// import About from "./aboutPage/page";
+import Extra from "./extra/page";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       {" "}
       {/* <h1>hellow world</h1> */}
       {/* <CmsPractice /> */}
-      <About />
+      {/* <About /> */}
+      <Extra />
     </>
   );
 }
