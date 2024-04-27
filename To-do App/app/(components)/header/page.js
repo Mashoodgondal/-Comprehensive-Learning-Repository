@@ -26,6 +26,8 @@ const Hader = () => {
             <a class="mr-5 hover:text-blue-600 cursor-pointer">Third Link</a>
             <a class="mr-5 hover:text-blue-600 cursor-pointer">Fourth Link</a>
             <a class="mr-5 hover:text-blue-600 cursor-pointer">Fifth Link</a>
+            <a class="mr-5 hover:text-blue-600 cursor-pointer">Fifth Link</a>
+            <a class="mr-5 hover:text-blue-600 cursor-pointer">Fifth Link</a>
             <a class="mr-5 hover:text-blue-600 cursor-pointer">sixth Link</a>
             <a class="mr-5 hover:text-blue-600 cursor-pointer">seventh Link</a>
             <a class="mr-5 hover:text-blue-600 cursor-pointer">seventh Link</a>
