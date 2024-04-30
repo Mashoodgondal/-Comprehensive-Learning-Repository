@@ -19,24 +19,15 @@ const CmsPractice = async () => {
   // console.log(responce);
   return (
     <div>
-      {" "}
-      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
+      <h1 className="text-3xl text-center mt-4 text-indigo-500 font-bold ">
         Get Data from Contentful CMS{" "}
       </h1>
-      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
-        Get Data from Contentful CMS{" "}
-      </h1>
-      <h1 className="text-3xl text-center text-indigo-500 font-bold ">
-        Get Data from Contentful CMS{" "}
-      </h1>
-      {/* <h1 className="text-3xl text-center text-indigo-500 font-bold ">
-        Get Data from Contentful CMS{" "}
-      </h1>
-      */}
       {services.map((service, i) => {
         return (
           <div className="text-center m-4 p-4 space-y-4 ">
-            <h1 key={i}>{service.title}</h1>
+            <h1 key={i} className="font-bold">
+              {service.title}
+            </h1>
             <h2>{service.description}</h2>
             <img src={service.image} alt="" width={100} className="mx-auto" />
             <hr className="h-2 " />
