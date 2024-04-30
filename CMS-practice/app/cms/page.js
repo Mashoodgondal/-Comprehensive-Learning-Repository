@@ -20,7 +20,7 @@ const CmsPractice = async () => {
   return (
     <div>
       <h1 className="text-3xl text-center mt-4 text-indigo-500 font-bold ">
-        Get Data from Contentful CMS{" "}
+        Get Data from Contentful CMS
       </h1>
       {services.map((service, i) => {
         return (
