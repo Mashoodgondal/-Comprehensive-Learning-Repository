@@ -55,3 +55,9 @@ export default function Hometm() {
 //     props: { serverTime },
 //   };
 // }
+// export async function getServerSideProps() {
+//   const serverTime = new Date().toLocaleTimeString();
+//   return {
+//     props: { serverTime },
+//   };
+// }
