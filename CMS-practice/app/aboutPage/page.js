@@ -47,3 +47,14 @@ export default About;
 //   );
 //   <hr />;
 // })}
+
+// {About.map((itm) => {
+//   return (
+//     <div>
+//       (<h1>{itm.Name}</h1>), (<h2>{itm.Address}</h2>), (
+//       <h3>{itm.Description}</h3>) (<h1>{itm.Name}</h1>), (
+//       <h2>{itm.Address}</h2>), (<h3>{itm.Description}</h3>)
+//     </div>
+//   );
+//   <hr />;
+// })}
