@@ -1,6 +1,12 @@
-import React from "react";
-
+import Link from "next/link";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RiCloseFill } from "react-icons/ri";
 const Hader = () => {
+  const [nav, setnav] = useState(false);
+  const handleNave = () => {
+    setnav(!nav);
+  };
   return (
     <div>
       <header class="text-gray-600 body-font bg-gray-100 m-3 rounded-md">
@@ -21,11 +27,58 @@ const Hader = () => {
             <span class="ml-3 text-xl">Tailblocks</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-blue-600 cursor-pointer">First Link</a>
-            <a class="mr-5 hover:text-blue-600 cursor-pointer">Second Link</a>
-            <a class="mr-5 hover:text-blue-600 cursor-pointer">Third Link</a>
-            <a class="mr-5 hover:text-blue-600 cursor-pointer">Fourth Link</a>
+            <ul className=" hidden md:flex item-cemter justify-center font-bold ">
+              <li>
+                <Link
+                  rel="stylesheet"
+                  href=""
+                  class="mr-5 hover:text-blue-600 cursor-pointer"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="stylesheet"
+                  href=""
+                  class="mr-5 hover:text-blue-600 cursor-pointer"
+                >
+                  {" "}
+                  Services{" "}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="stylesheet"
+                  href=""
+                  class="mr-5 hover:text-blue-600 cursor-pointer"
+                >
+                  About{" "}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="stylesheet"
+                  href=""
+                  class="mr-5 hover:text-blue-600 cursor-pointer"
+                >
+                  Contect{" "}
+                </Link>
+              </li>
+            </ul>
+            <div onClick={handleNave}>
+              <GiHamburgerMenu />
+            </div>
           </nav>
+          {/* << For Mobile>> */}
+          <div>
+            <div>
+              <h1>Logo </h1>{" "}
+              <div>
+                <RiCloseFill />
+              </div>
+            </div>
+          </div>
         </div>
       </header>
     </div>
@@ -33,3 +86,7 @@ const Hader = () => {
 };
 
 export default Hader;
+//  <a class="mr-5 hover:text-blue-600 cursor-pointer">First Link</a>
+//             <a class="mr-5 hover:text-blue-600 cursor-pointer">Second Link</a>
+//             <a class="mr-5 hover:text-blue-600 cursor-pointer">Third Link</a>
+//             <a class="mr-5 hover:text-blue-600 cursor-pointer">Fourth Link</a>
