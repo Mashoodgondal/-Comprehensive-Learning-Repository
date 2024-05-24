@@ -1,7 +1,7 @@
 // import State from "./ifState/page";
 // import ApiCalling from "./callApi/page";
-import FechApi from "./fechApi/page2";
-// import GitApp from "./gitapp/page";
+// import FechApi from "./fechApi/page2";
+import GitApp from "./gitapp/page";
 // import MapFunc from "./mapFunc/page";
 // import Counting from "./simpleCounter/page";
 // import Getvalue from "./targetValue/page";
@@ -20,9 +20,9 @@ export default function Home() {
         </div>
       </div>
       <ApiCalling />
-      <Getvalue />
-      <GitApp /> */}
-      <FechApi />
+      <Getvalue />*/}
+      <GitApp />
+      {/* <FechApi /> */}
     </>
   );
 }

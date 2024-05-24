@@ -32,7 +32,7 @@ const Hader = () => {
               <li>
                 <Link
                   rel="stylesheet"
-                  href="/"
+                  href="homepage"
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
                   Home
@@ -44,8 +44,7 @@ const Hader = () => {
                   href=""
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
-                  {" "}
-                  Services{" "}
+                  Services
                 </Link>
               </li>
               <li>
@@ -54,7 +53,7 @@ const Hader = () => {
                   href=""
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
-                  About{" "}
+                  About
                 </Link>
               </li>
               <li>
@@ -80,17 +79,17 @@ const Hader = () => {
       <div className={`${nav ? " md:hidden w-full m-10" : "hidden"}`}>
         <div
           className={`${
-            nav ? "w-[70%] sm:w-[60%] md:w-[65%] ease-in duration-5000" : ""
+            nav ? "w-[70%] sm:w-[60%] md:w-[65%] ease-in duration-500" : ""
           }`}
         >
-          <div className="flex item-center justify-between  border-b">
+          <div className="flex item-center justify-between mb-4  border-b border-gray-400 border-h-4">
             <div>
               <h1>Logo </h1>
             </div>
             <div onClick={handleNave}>
               <RiCloseFill
                 size={25}
-                className="shadow-md rounded-md cursor-pointer"
+                className="shadow-md rounded-md mb-4 cursor-pointer"
               />
             </div>
           </div>
@@ -99,7 +98,7 @@ const Hader = () => {
               <li>
                 <Link
                   rel="stylesheet"
-                  href=""
+                  href="homepage"
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
                   Home
@@ -111,8 +110,7 @@ const Hader = () => {
                   href=""
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
-                  {" "}
-                  Services{" "}
+                  Services
                 </Link>
               </li>
               <li>
@@ -121,7 +119,7 @@ const Hader = () => {
                   href=""
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
-                  About{" "}
+                  About
                 </Link>
               </li>
               <li>
@@ -130,7 +128,7 @@ const Hader = () => {
                   href=""
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
-                  Contect{" "}
+                  Contect
                 </Link>
               </li>
             </ul>
