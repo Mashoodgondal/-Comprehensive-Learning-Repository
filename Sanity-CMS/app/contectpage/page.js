@@ -1,6 +1,6 @@
 const ContentPage = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-blue-200">
+    <div class="bg-gradient-to-r from-blue-400 via-blue-100 to-blue-400">
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-14 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
@@ -16,7 +16,10 @@ const ContentPage = () => {
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
-                  <label for="name" className="leading-7 text-sm text-gray-800">
+                  <label
+                    for="name"
+                    className="leading-7 text-sm font-bold text-gray-900"
+                  >
                     Name
                   </label>
                   <input
@@ -31,7 +34,7 @@ const ContentPage = () => {
                 <div className="relative">
                   <label
                     for="email"
-                    className="leading-7 text-sm text-gray-800"
+                    className="leading-7 text-sm font-bold text-gray-900"
                   >
                     Email
                   </label>
@@ -47,7 +50,7 @@ const ContentPage = () => {
                 <div className="relative">
                   <label
                     for="message"
-                    className="leading-7 text-sm text-gray-600"
+                    className="leading-7 text-sm font-bold text-gray-900"
                   >
                     Message
                   </label>
@@ -63,12 +66,13 @@ const ContentPage = () => {
                   Submit
                 </button>
               </div>
-              <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+              <div className="p-2 w-full pt-2 mt-2 border-t border-gray-200 text-center">
                 <a className="text-indigo-500">example@email.com</a>
-                <p className="leading-normal my-5">
+                {/* <p className="leading-normal my-5">
                   49 Smith St.
-                  <br />
-                </p>
+                  
+                </p> */}
+                <br />
                 <span className="inline-flex">
                   <a className="text-gray-500">
                     <svg
