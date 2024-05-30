@@ -1,3 +1,4 @@
+import frontimg from "@/public/images/first.jpg";
 const HomePage = () => {
   return (
     <div>
@@ -20,8 +21,8 @@ const HomePage = () => {
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <img
               class="object-cover object-center rounded"
-              alt="hero"
-              src="https://dummyimage.com/720x600"
+              alt=""
+              src={frontimg}
             />
           </div>
         </div>
