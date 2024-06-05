@@ -1,4 +1,4 @@
-import frontimg from "@/public/images/first.jpg";
+// import frontimg from "@/public/images/first.jpg";
 const HomePage = () => {
   return (
     <div>
@@ -19,11 +19,7 @@ const HomePage = () => {
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img
-              class="object-cover object-center rounded"
-              alt=""
-              src={frontimg}
-            />
+            <img class="object-cover object-center rounded" alt="" src="" />
           </div>
         </div>
       </section>

@@ -32,7 +32,7 @@ const Hader = () => {
               <li>
                 <Link
                   rel="stylesheet"
-                  href="homepage"
+                  href="/"
                   class="mr-5 hover:text-blue-600 cursor-pointer"
                 >
                   Home
