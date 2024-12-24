@@ -11,17 +11,12 @@ const GitApp = () => {
   const ChangeHandler = (e) => {
     setuserName(e.target.value);
   };
-  // const searchHandler = async () => {
-  //   let responce = await fetch(`https://api.github.com/users/${userName}`);
-  //   responce = await responce.json();
-  //   setdata(responce);
-  //   console.log(responce);
-  // };
+
   const searchHandler = async () => {
-    setError(null); // Reset error state before search
-    setdata(null);  // Reset previous data
-    setfollowers([]); // Clear followers list
-    setfollowing([]); // Clear following list
+    setError(null);
+    setdata(null);
+    setfollowers([]);
+    setfollowing([]);
 
     try {
       let response = await fetch(`https://api.github.com/users/${userName}`);
@@ -40,6 +35,7 @@ const GitApp = () => {
       console.error("Failed to fetch user data:", error);
     }
   };
+
   const followingHandler = async () => {
     if (!data || !data.login) {
       console.error("User login is not available");
@@ -120,7 +116,7 @@ const GitApp = () => {
             <span className="font-bold">Followers:</span> {data.followers}
             <span className="font-bold ml-3 ">Follow:</span> {data.following}
           </h2>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center space-x-4">
             <button
               className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
               onClick={followerHandler}
