@@ -246,34 +246,57 @@ const GitApp = () => {
 
       </div>
       {repos.length >= 1 && (
-        <div className="shadow-md rounded-lg overflow-hidden mt-10">
-          <h1 className="my-3 text-center font-bold text-2xl text-indigo-700">Repositories</h1>
-          <table className="min-w-full table-auto bg-white">
-            <thead className="bg-indigo-600 text-white">
-              <tr>
-                <th className="px-6 py-3 text-center text-sm font-medium uppercase">ID</th>
-                <th className="px-6 py-3 text-center text-sm font-medium uppercase">Name</th>
-                <th className="px-6 py-3 text-center text-sm font-medium uppercase">Visibility</th>
-                <th className="px-6 py-3 text-center text-sm font-medium uppercase">URL</th>
-              </tr>
-            </thead>
-            <tbody>
-              {repos.map((repo) => (
-                <tr key={repo.id} className="hover:bg-gray-200 transition duration-200">
-                  <td className="px-6 py-4 text-center text-gray-700 font-medium">{repo.id}</td>
-                  <td className="px-6 py-4 text-center text-gray-700">{repo.name}</td>
-                  <td className="px-6 py-4 text-center text-gray-700">{repo.visibility}</td>
-                  <td className="px-6 py-4 text-center text-indigo-600 underline">
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                      View Repo
-                    </a>
-                  </td>
+        <div className="mt-10 bg-white shadow-xl rounded-lg overflow-hidden">
+          <h1 className="my-5 text-center text-3xl font-extrabold text-indigo-700 tracking-wide">
+            ✨ Repositories  ✨
+          </h1>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-md">
+              <thead className="bg-gradient-to-r from-indigo-500 to-indigo-700 text-white">
+                <tr>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">ID</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">Name</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">Visibility</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">URL</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {repos.map((repo) => (
+                  <tr
+                    key={repo.id}
+                    className="hover:bg-indigo-50 transition duration-300"
+                  >
+                    <td className="px-6 py-4 text-gray-700 font-semibold">{repo.id}</td>
+                    <td className="px-6 py-4 text-gray-800 font-medium">{repo.name}</td>
+                    <td
+                      className={`px-6 py-4 font-medium ${repo.visibility === 'public'
+                        ? 'text-green-600'
+                        : 'text-red-600'
+                        }`}
+                    >
+                      {repo.visibility}
+                    </td>
+                    <td className="px-6 py-4 text-indigo-600 underline">
+                      <a
+                        href={repo.html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-indigo-800 transition duration-300"
+                      >
+                        🔗 View Repo
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="p-4 text-center bg-gray-100 rounded-b-lg">
+            <p className="text-gray-600">Total Repositories: {repos.length}</p>
+          </div>
         </div>
       )}
+
 
       {/* Separator */}
       <hr className="w-full h-0.5 mx-auto my-6 bg-indigo-400 border-0 rounded-md" />
