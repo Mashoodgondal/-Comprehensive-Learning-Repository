@@ -1,5 +1,7 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
+// import GitRepo from "../repoes/page";
 
 // https://api.github.com/users/naveed-rana
 const GitApp = () => {
@@ -37,12 +39,13 @@ const GitApp = () => {
   };
 
   const followingHandler = async () => {
-    if (!data || !data.login) {
+    if (!data || !data.following_url) {
       console.error("User login is not available");
       return;
     }
     try {
       let response = await fetch(`https://api.github.com/users/${data.login}/following`);
+      // let response = await fetch(data.following_url);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -129,6 +132,14 @@ const GitApp = () => {
             >
               Get Following
             </button>
+            <Link href="/repoes">
+              <button
+                className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
+              // onClick={reposHandler}
+              >
+                Get Repositories
+              </button>
+            </Link>
           </div>
         </div>
       )}
