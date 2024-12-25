@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 import { useState } from "react";
 // import GitRepo from "../repoes/page";
 
@@ -10,6 +10,7 @@ const GitApp = () => {
   const [data, setdata] = useState(null);
   const [followers, setfollowers] = useState([]);
   const [following, setfollowing] = useState([]);
+  const [repos, setrepos] = useState([]);
   const ChangeHandler = (e) => {
     setuserName(e.target.value);
   };
@@ -19,6 +20,7 @@ const GitApp = () => {
     setdata(null);
     setfollowers([]);
     setfollowing([]);
+    setrepos([])
 
     try {
       let response = await fetch(`https://api.github.com/users/${userName}`);
@@ -74,6 +76,24 @@ const GitApp = () => {
       console.error("Failed to fetch followers:", error);
     }
   };
+  const reposHandler = async () => {
+    if (!data || !data.login) {
+      console.error("User login is not available");
+      return;
+    }
+    try {
+      let response = await fetch(`https://api.github.com/users/${data.login}/repos`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const reposData = await response.json();
+      console.log(reposData);
+      setrepos(reposData);
+    } catch (error) {
+      console.error("Failed to fetch repositories:", error);
+    }
+  };
+
   return (
 
     <div className="flex flex-col item-center justify-center text-center  mb-8 p-4 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-lg shadow-lg">
@@ -132,14 +152,14 @@ const GitApp = () => {
             >
               Get Following
             </button>
-            <Link href="/repoes">
-              <button
-                className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
-              // onClick={reposHandler}
-              >
-                Get Repositories
-              </button>
-            </Link>
+            {/* <Link href="/repoes"> */}
+            <button
+              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
+              onClick={reposHandler}
+            >
+              Get Repositories
+            </button>
+            {/* </Link> */}
           </div>
         </div>
       )}
@@ -225,6 +245,35 @@ const GitApp = () => {
         )}
 
       </div>
+      {repos.length >= 1 && (
+        <div className="shadow-md rounded-lg overflow-hidden mt-10">
+          <h1 className="my-3 text-center font-bold text-2xl text-indigo-700">Repositories</h1>
+          <table className="min-w-full table-auto bg-white">
+            <thead className="bg-indigo-600 text-white">
+              <tr>
+                <th className="px-6 py-3 text-center text-sm font-medium uppercase">ID</th>
+                <th className="px-6 py-3 text-center text-sm font-medium uppercase">Name</th>
+                <th className="px-6 py-3 text-center text-sm font-medium uppercase">Visibility</th>
+                <th className="px-6 py-3 text-center text-sm font-medium uppercase">URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              {repos.map((repo) => (
+                <tr key={repo.id} className="hover:bg-gray-200 transition duration-200">
+                  <td className="px-6 py-4 text-center text-gray-700 font-medium">{repo.id}</td>
+                  <td className="px-6 py-4 text-center text-gray-700">{repo.name}</td>
+                  <td className="px-6 py-4 text-center text-gray-700">{repo.visibility}</td>
+                  <td className="px-6 py-4 text-center text-indigo-600 underline">
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                      View Repo
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* Separator */}
       <hr className="w-full h-0.5 mx-auto my-6 bg-indigo-400 border-0 rounded-md" />
