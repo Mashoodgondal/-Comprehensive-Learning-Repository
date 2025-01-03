@@ -1,5 +1,5 @@
 "use client";
-// import Link from "next/link";
+import Link from "next/link";
 import { useState } from "react";
 // import GitRepo from "../repoes/page";
 
@@ -20,7 +20,7 @@ const GitApp = () => {
     setdata(null);
     setfollowers([]);
     setfollowing([]);
-    setrepos([])
+    // setrepos([])
 
     try {
       let response = await fetch(`https://api.github.com/users/${userName}`);
@@ -154,9 +154,12 @@ const GitApp = () => {
             </button>
             {/* <Link href="/repoes"> */}
             <button
+
               className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
               onClick={reposHandler}
             >
+
+
               Get Repositories
             </button>
             {/* </Link> */}
@@ -169,9 +172,9 @@ const GitApp = () => {
       <div className="w-full mt-10 overflow-x-auto">
         {followers.length >= 1 && (
           <div className="shadow-md rounded-lg overflow-hidden">
-            <h1 className="my-3 font-bold  text-center text-2xl text-indigo-700 ">Followers</h1>
-            <table className="min-w-full table-auto bg-white">
-              <thead className="bg-indigo-600 text-white">
+            <h1 className="my-3 font-bold  text-center text-2xl text-yellow-700 ">Followers</h1>
+            <table className="min-w-full table-auto bg-white border border-gray-200 rounded-md">
+              <thead className="bg-gradient-to-r from-yellow-500 to-indigo-600 text-whit">
                 <tr>
                   <th className="px-6 py-3 text-center text-sm font-medium uppercase">ID</th>
                   <th className="px-6 py-3 text-center text-sm font-medium uppercase">Avatar</th>
@@ -183,7 +186,7 @@ const GitApp = () => {
                 {followers.map((item) => (
                   <tr
                     key={item.id}
-                    className="hover:bg-gray-200 transition duration-200"
+                    className="hover:bg-indigo-100 transition duration-200"
                   >
                     <td className="px-6 py-4 text-center text-gray-700 font-medium">{item.id}</td>
                     <td className="px-6 py-4 text-center">
@@ -210,9 +213,9 @@ const GitApp = () => {
 
           <div className="shadow-md rounded-lg overflow-hidden">
             <hr className="w-full h-0.5 mx-auto my-6 bg-indigo-400 border-0 rounded-md" />
-            <h1 className="my-3 text-center font-bold text-2xl text-indigo-700 ">Following</h1>
-            <table className="min-w-full table-auto bg-white">
-              <thead className="bg-indigo-600 text-white">
+            <h1 className="my-3 text-center font-bold text-2xl text-yellow-700 ">Following</h1>
+            <table className="min-w-full table-auto bg-white border border-gray-200 rounded-md">
+              <thead className="bg-gradient-to-r from-yellow-500 to-indigo-600 text-white">
                 <tr>
                   <th className="px-6 py-3 text-center text-sm font-medium uppercase">ID</th>
                   <th className="px-6 py-3 text-center text-sm font-medium uppercase">Avatar</th>
@@ -224,7 +227,7 @@ const GitApp = () => {
                 {following.map((item) => (
                   <tr
                     key={item.id}
-                    className="hover:bg-gray-200 transition duration-200"
+                    className="hover:bg-indigo-100 transition duration-200"
                   >
                     <td className="px-6 py-4 text-center text-gray-700 font-medium">{item.id}</td>
                     <td className="px-6 py-4 text-center">
@@ -247,24 +250,24 @@ const GitApp = () => {
       </div>
       {repos.length >= 1 && (
         <div className="mt-10 bg-white shadow-xl rounded-lg overflow-hidden">
-          <h1 className="my-5 text-center text-3xl font-extrabold text-indigo-700 tracking-wide">
+          <h1 className="my-5 text-center text-3xl font-extrabold text-yellow-700 tracking-wide">
             ✨ Repositories  ✨
           </h1>
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-md">
-              <thead className="bg-gradient-to-r from-indigo-500 to-indigo-700 text-white">
+            <table className="min-w-full bg-gradient-to-br from-blue-100 to-blue-200 border border-gray-200 rounded-md">
+              <thead className="bg-gradient-to-r from-yellow-500 to-indigo-600 text-white">
                 <tr>
-                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">ID</th>
-                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">Name</th>
-                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">Visibility</th>
-                  <th className="px-6 py-3 text-sm font-medium uppercase text-left">URL</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-center">ID</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-center">Name</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-center">Visibility</th>
+                  <th className="px-6 py-3 text-sm font-medium uppercase text-center">URL</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {repos.map((repo) => (
                   <tr
                     key={repo.id}
-                    className="hover:bg-indigo-50 transition duration-300"
+                    className="hover:bg-indigo-200 transition duration-300"
                   >
                     <td className="px-6 py-4 text-gray-700 font-semibold">{repo.id}</td>
                     <td className="px-6 py-4 text-gray-800 font-medium">{repo.name}</td>
@@ -283,7 +286,7 @@ const GitApp = () => {
                         rel="noopener noreferrer"
                         className="hover:text-indigo-800 transition duration-300"
                       >
-                        🔗 View Repo
+                        View Repo
                       </a>
                     </td>
                   </tr>
@@ -291,8 +294,8 @@ const GitApp = () => {
               </tbody>
             </table>
           </div>
-          <div className="p-4 text-center bg-gray-100 rounded-b-lg">
-            <p className="text-gray-600">Total Repositories: {repos.length}</p>
+          <div className="p-2 text-center bg-yellow-400 rounded-b-lg">
+            <p className="text-green-700 text-2xl ">Total Repositories: {repos.length}</p>
           </div>
         </div>
       )}
