@@ -2,6 +2,7 @@
 // import ApiCalling from "./callApi/page";
 // import FechApi from "./fechApi/page2";
 import GitApp from "./gitapp/page";
+import RecipeSearch from "./repoes/page";
 // import MapFunc from "./mapFunc/page";
 // import Counting from "./simpleCounter/page";
 // import Getvalue from "./targetValue/page";
@@ -22,6 +23,7 @@ export default function Home() {
       <ApiCalling />
       <Getvalue />*/}
       <GitApp />
+      <RecipeSearch />
       {/* <FechApi /> */}
     </>
   );
