@@ -1,7 +1,7 @@
 "use client";
-// import Link from "next/link";
+
 import { useState } from "react";
-// import GitRepo from "../repoes/page";
+
 
 // https://api.github.com/users/naveed-rana
 const GitApp = () => {
@@ -11,7 +11,6 @@ const GitApp = () => {
   const [followers, setfollowers] = useState([]);
   const [following, setfollowing] = useState([]);
   const [repos, setrepos] = useState([]);
-  const [loader, setloader] = useState(false);
 
   const ChangeHandler = (e) => {
     setuserName(e.target.value);
@@ -25,6 +24,7 @@ const GitApp = () => {
     // setrepos([])
 
     try {
+
       let response = await fetch(`https://api.github.com/users/${userName}`);
       if (!response.ok) {
         if (response.status === 404) {
@@ -36,6 +36,7 @@ const GitApp = () => {
       let userData = await response.json();
       setdata(userData);
       console.log(userData);
+
     } catch (error) {
       setError(error.message);
       console.error("Failed to fetch user data:", error);
@@ -48,7 +49,7 @@ const GitApp = () => {
       return;
     }
     try {
-      setloader(true)
+
       let response = await fetch(`https://api.github.com/users/${data.login}/following`);
       // let response = await fetch(data.following_url);
       if (!response.ok) {
@@ -57,7 +58,7 @@ const GitApp = () => {
       const followingData = await response.json();
       console.log(followingData);
       setfollowing(followingData);
-      setloader(false)
+
     } catch (error) {
       console.error("Failed to fetch following:", error);
     }
@@ -68,7 +69,7 @@ const GitApp = () => {
       console.error("Followers URL is not available");
       return;
     }
-    // setloader(true)
+
     try {
       let responce = await fetch(data.followers_url);
       if (!responce.ok) {
@@ -77,7 +78,7 @@ const GitApp = () => {
       responce = await responce.json();
       console.log(responce);
       setfollowers(responce);
-      setloader(false)
+
     } catch (error) {
       console.error("Failed to fetch followers:", error);
     }
@@ -88,7 +89,7 @@ const GitApp = () => {
       return;
     }
     try {
-      // setloader(true)
+
       let response = await fetch(`https://api.github.com/users/${data.login}/repos`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -96,7 +97,7 @@ const GitApp = () => {
       const reposData = await response.json();
       console.log(reposData);
       setrepos(reposData);
-      setloader(false)
+
     } catch (error) {
       console.error("Failed to fetch repositories:", error);
     }
@@ -132,46 +133,49 @@ const GitApp = () => {
 
       {/* User Information */}
       {data && (
-        <div className="text-center mt-8 p-4 bg-white rounded-md shadow-md">
-          <h1 className="text-indigo-600 text-3xl font-bold mb-4">GitHub User</h1>
-          <img
-            src={data.avatar_url}
-            width={120}
-            className="mx-auto mt-4 rounded-full border-4 border-indigo-300"
-            alt="User Avatar"
-          />
-          <h2 className="text-gray-700 mt-4 font-medium">
-            <span className="font-bold">Bio:</span> {data.bio || 'No bio available'}
-          </h2>
-          <h2 className="text-gray-700 font-medium mt-2">
-            <span className="font-bold">Followers:</span> {data.followers}
-            <span className="font-bold ml-3 ">Follow:</span> {data.following}
-          </h2>
-          <div className="flex justify-center space-x-4">
+        <div>
 
-            <button
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
-              onClick={followerHandler}
-            >
-              Get Followers
-            </button>
-            <button
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
-              onClick={followingHandler}
-            >
-              Get Following
-            </button>
-            {/* <Link href="/repoes"> */}
-            <button
+          <div className="text-center mt-8 p-4 bg-white rounded-md shadow-md">
+            <h1 className="text-indigo-600 text-3xl font-bold mb-4">GitHub User</h1>
+            <img
+              src={data.avatar_url}
+              width={120}
+              className="mx-auto mt-4 rounded-full border-4 border-indigo-300"
+              alt="User Avatar"
+            />
+            <h2 className="text-gray-700 mt-4 font-medium">
+              <span className="font-bold">Bio:</span> {data.bio || 'No bio available'}
+            </h2>
+            <h2 className="text-gray-700 font-medium mt-2">
+              <span className="font-bold">Followers:</span> {data.followers}
+              <span className="font-bold ml-3 ">Follow:</span> {data.following}
+            </h2>
+            <div className="flex justify-center space-x-4">
 
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
-              onClick={reposHandler}
-            >
+              <button
+                className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
+                onClick={followerHandler}
+              >
+                Get Followers
+              </button>
+              <button
+                className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
+                onClick={followingHandler}
+              >
+                Get Following
+              </button>
+              {/* <Link href="/repoes"> */}
+              <button
+
+                className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 mt-6 transition duration-300"
+                onClick={reposHandler}
+              >
 
 
-              Get Repositories
-            </button>
-            {/* </Link> */}
+                Get Repositories
+              </button>
+              {/* </Link> */}
+            </div>
           </div>
         </div>
       )}
@@ -179,12 +183,7 @@ const GitApp = () => {
       {/* Followers Table */}
 
       <div className="w-full mt-10 overflow-x-auto">
-        {loader && (
-          <div className="flex justify-center items-center">
-            <div className="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
-            <p className="ml-4 text-lg font-semibold text-blue-500">Loading followers...</p>
-          </div>
-        )}
+
         {followers.length >= 1 && (
           <div className="shadow-md rounded-lg overflow-hidden">
             <h1 className="my-3 font-bold  text-center text-2xl text-yellow-700 ">Followers</h1>
@@ -224,12 +223,7 @@ const GitApp = () => {
 
 
       <div className="w-full mt-10 overflow-x-auto">
-        {loader && (
-          <div className="flex justify-center items-center">
-            <div className="w-16 h-16 border-4 border-green-600 border-dashed rounded-full animate-spin"></div>
-            <p className="ml-4 text-lg font-semibold text-blue-500"> following...</p>
-          </div>
-        )}
+
         {following.length >= 1 && (
 
           <div className="shadow-md rounded-lg overflow-hidden">
@@ -269,12 +263,7 @@ const GitApp = () => {
         )}
 
       </div>
-      {loader && (
-        <div className="flex justify-center items-center">
-          <div className="w-16 h-16 border-4 border-yellow-600 border-dashed rounded-full animate-spin"></div>
-          <p className="ml-4 text-lg font-semibold text-yellow-500">Your Repoes...</p>
-        </div>
-      )}
+
       {repos.length >= 1 && (
         <div className="mt-10 bg-white shadow-xl rounded-lg overflow-hidden">
           <h1 className="my-5 text-center text-3xl font-extrabold text-yellow-700 tracking-wide">
@@ -336,3 +325,5 @@ const GitApp = () => {
 };
 
 export default GitApp;
+
+
